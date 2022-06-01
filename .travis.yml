@@ -5,12 +5,6 @@ solution: ImageSearchApp.sln
 script:
   - dotnet restore
   - dotnet test
- deploy:
-  provider: releases
-  api_key: $GITHUB_TOKEN
-  file: build
-  skip_cleanup: true
-  on:
-    tags: true
+ 
     
     
