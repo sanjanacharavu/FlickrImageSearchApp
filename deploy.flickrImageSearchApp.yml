@@ -1,10 +1,6 @@
 name: "Deploy Flickr Image Search App"
 
-on:
-  push:
-    tags:
-      - "ImageSearchApp/v*"
-
+on: [push]
 env:
   PROJECT_PATH: ImageSearchApp/ImageSearchApp.csproj
 
@@ -29,7 +25,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
 
       - uses: csexton/release-asset-action@v2
